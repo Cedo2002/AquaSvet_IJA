@@ -1,0 +1,464 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7f1;
+  color: #173b40;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 0 0 18px;
+  color: #52696a;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 18px;
+  line-height: 1.2;
+}
+
+h1,
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+h1 span,
+.logo span {
+  color: #2d685b;
+}
+
+.omotac {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.preskoci {
+  position: absolute;
+  top: -80px;
+  padding: 12px;
+  background: #173b40;
+  color: white;
+  z-index: 100;
+}
+
+.preskoci:focus {
+  top: 10px;
+  left: 10px;
+}
+
+:focus-visible {
+  outline: 3px solid #82ad91;
+  outline-offset: 3px;
+}
+
+
+header {
+  background: white;
+  border-bottom: 1px solid #dbe4d9;
+}
+
+.navigacija {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 82px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.meni {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meni a {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.meni a:hover,
+.meni a[aria-current="page"] {
+  background: #e8eee5;
+  color: #2d685b;
+}
+
+.meni-prekidac,
+.meni-dugme {
+  display: none;
+}
+
+
+.uvod,
+.dve-kolone {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 38px;
+  align-items: start;
+}
+
+.uvod {
+  align-items: center;
+  padding: 50px 0;
+}
+
+.uvod > *,
+.dve-kolone > *,
+.tri-kolone > * {
+  min-width: 0;
+}
+
+.nadnaslov {
+  color: #2d685b;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.glavna-slika {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.dugme {
+  display: inline-block;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 6px;
+  background: #173b40;
+  color: white;
+  font: bold 14px Arial, sans-serif;
+  cursor: pointer;
+}
+
+.dugme:hover {
+  background: #2d685b;
+}
+
+.sekcija {
+  padding: 30px 0 40px;
+}
+
+.naslov-stranice {
+  padding-top: 40px;
+}
+
+
+.tri-kolone {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.kartica,
+form {
+  padding: 25px;
+  border: 1px solid #dbe4d9;
+  border-radius: 10px;
+  background: white;
+}
+
+.kartica {
+  transition: transform .2s, box-shadow .2s;
+}
+
+.kartica:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #173b4015;
+}
+
+.kartica p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.broj {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #2d685b;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.riba {
+  padding: 0;
+  overflow: hidden;
+}
+
+.riba img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #e8eee5;
+}
+
+.riba h3 {
+  margin: 22px 22px 12px;
+}
+
+.riba p {
+  margin: 0 22px 22px;
+}
+
+.oprema,
+.savet {
+  padding: 25px;
+  background: #e8eee5;
+  border-radius: 10px;
+}
+
+.oprema ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #52696a;
+}
+
+.savet {
+  margin: 12px 0 35px;
+  border-left: 4px solid #2d685b;
+}
+
+.savet p:last-child {
+  margin-bottom: 0;
+}
+
+
+form label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid #c6d4c5;
+  border-radius: 5px;
+  background: #fbfcf8;
+  color: #173b40;
+  font: inherit;
+}
+
+form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.potvrda {
+  display: none;
+  margin: 18px 0 0;
+  padding: 14px;
+  border-radius: 6px;
+  background: #e8eee5;
+  font-size: 13px;
+}
+
+.potvrda:target {
+  display: block;
+}
+
+
+footer {
+  margin-top: 25px;
+  background: #e8eee5;
+}
+
+.podnozje {
+  padding: 22px 0;
+  text-align: center;
+}
+
+.podnozje p {
+  margin: 0;
+  font-size: 13px;
+}
+
+
+.mehur {
+  position: absolute;
+  bottom: -20px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #638f7b;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: mehuri 8s linear infinite;
+}
+
+.prvi {
+  left: 18%;
+}
+
+.drugi {
+  left: 60%;
+  animation-delay: 2.5s;
+}
+
+.treci {
+  left: 83%;
+  animation-delay: 5s;
+}
+
+@keyframes mehuri {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .7;
+  }
+
+  100% {
+    bottom: 110%;
+    opacity: 0;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .tri-kolone {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 900px) {
+  .uvod,
+  .dve-kolone {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .meni-prekidac {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    clip-path: inset(50%);
+  }
+
+  .meni-dugme {
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid #c6d4c5;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .meni {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 12px;
+    background: white;
+    border: 1px solid #dbe4d9;
+  }
+
+  .meni-prekidac:checked ~ .meni {
+    display: block;
+  }
+
+  .meni-prekidac:focus-visible + .meni-dugme {
+    outline: 3px solid #82ad91;
+  }
+}
+
+
+@media (max-width: 680px) {
+  .omotac {
+    width: 92%;
+  }
+
+  .tri-kolone {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .uvod {
+    padding: 35px 0;
+  }
+
+  form .dugme {
+    width: 100%;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

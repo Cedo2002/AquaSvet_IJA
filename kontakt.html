@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt stranica AquaSvet sajta sa probnom formom za pitanja o akvarijumima i ribicama.">
+  <title>Kontakt - AquaSvet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="preskoci" href="#sadrzaj">Pređi na sadržaj</a>
+  <header>
+    <div class="omotac navigacija">
+      <a class="logo" href="index.html">Aqua<span>Svet</span></a>
+      <nav aria-label="Glavna navigacija">
+        <input type="checkbox" id="meni-prekidac" class="meni-prekidac">
+        <label for="meni-prekidac" class="meni-dugme">Meni</label>
+        <ul class="meni">
+          <li><a href="index.html">Pocčetna</a></li>
+          <li><a href="ribe.html">Akvarijumi i ribice</a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="sadrzaj" class="omotac">
+    <section class="naslov-stranice">
+      <p class="nadnaslov">PROSTOR ZA TVOJA PITANJA</p>
+      <h1>Pričajmo <span>o akvaristici.</span></h1>
+      <p>Imaš pitanje o svom prvom akvarijumu ili izboru ribica?</p>
+    </section>
+    <section class="sekcija dve-kolone kontakt">
+      <div>
+        <h2>Napiši svoje pitanje.</h2>
+        <p>AquaSvet je mali vodič za ljubitelje akvarijuma. Istraži osnovnu opremu i upoznaj neke od omiljenih ukrasnih ribica.</p>
+      </div>
+      <form action="kontakt.html#provera" method="get" aria-describedby="napomena-forme">
+        <label for="ime">Ime i prezime *</label>
+        <input type="text" id="ime" placeholder="Tvoje ime i prezime" minlength="2" maxlength="80" autocomplete="off" required>
+        <label for="email">E-mail adresa *</label>
+        <input type="email" id="email" placeholder="ime@primer.rs" maxlength="120" autocomplete="off" required>
+        <label for="tema">Tema *</label>
+        <select id="tema" required>
+          <option value="" disabled selected>Izaberi temu</option>
+          <option value="akvarijum">Moj prvi akvarijum</option>
+          <option value="ribice">Izbor ribica</option>
+          <option value="nega">Održavanje</option>
+        </select>
+        <label for="poruka">Poruka *</label>
+        <textarea id="poruka" rows="5" placeholder="Napiši najmanje 10 znakova." minlength="10" maxlength="1500" required></textarea>
+        <button class="dugme" type="submit">Pošalji</button>
+        <p class="potvrda" id="provera" role="status">Forma ispravna</p>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="omotac podnozje">
+      <p>© 2026 AquaSvet · Svet akvarijuma i ribica</p>
+    </div>
+  </footer>
+</body>
+</html>
